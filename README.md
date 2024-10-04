@@ -6,18 +6,12 @@ It relies on a local [LibreTranslate](https://github.com/LibreTranslate/LibreTra
 
 ![sample](./images/sample.jpg)
 
-
-
 ## Features
-
 - Over comments to display translations in the info.
 - Replace selection by translation
 - Insert translation after selection
 
-___Temporary limitation:___ *For now, the translation is locket from CN to EN. 'comment-translate' integration will be enhance shortly to detect source language and let you configure the targeted one.*
-
 ## Requirements
-
 - [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate): free and Open Source Machine Translation API, entirely self-hosted. Unlike other APIs, it doesn't rely on proprietary providers such as Google or Azure to perform translations. Instead, its translation engine is powered by the open source Argos Translate library.
 - [comment-translate](https://github.com/intellism/vscode-comment-translate) vscode extension: this extension helps developers translate comments, strings, code hints, error messages, and variable names in their code.
 
@@ -30,10 +24,11 @@ First ensure [python](https://www.python.org/) and [pip](https://pip.pypa.io/en/
 python --version
 python -m pip --version
 ```
+> Have been tested with Python v3.11.0 & pip v24.0
 
 Install [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate):
 ```
-pip install libretranslate
+python -m pip install libretranslate
 ```
 > __Info:__ The languages installation can take few minutes
 
@@ -48,26 +43,26 @@ The extension will target the local web API, see the [official doc](https://libr
 4. Change `comment-translate` translation source by targeting `libretranslatesource`
 In vscode execute:
 ```
-> Change translation source
+> Change translate source
 ```
-to invoke the service configuration page, select `libretranslate translate` source, and check the translation effect.
+![libretranslate-source](./images/sourcechange01.jpg)
 
-![libretranslate-source](./images/libretranslate-source.jpg)
+It'll invoke the service configuration page. Then select `libretranslate translate` source.
 
+![libretranslate-source](./images/sourcechange02.jpg)
+
+Enjoy!
 
 ## Extension Settings
 None for now.
 
 However, please refer to the current configurations of the [comment-translate](https://github.com/intellism/vscode-comment-translate?tab=readme-ov-file#common-configurations) extension.
 
-
 ## Incoming features
-- language detection and configuration
 - configurable libretranslate's host url
 - configurable text to translate max length
 - prettify translations display
 
 ## Code references
-
 - [deepl-translate](https://github.com/intellism/deepl-translate/): used as main source of inspiration
 - [libretranslate-integration](https://github.com/Jararered/libretranslate-integration): for the context features
