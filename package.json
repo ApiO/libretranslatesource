@@ -1,0 +1,61 @@
+{
+  "name": "libretranslatesource",
+  "displayName": "LibreTranslate source",
+  "description": "Translation source for `Comment Translate` plugin using local LibreTranslate engine",
+  "version": "0.0.3",
+  "publisher": "Yolomancing",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "translateSource",
+    "comment translate",
+    "libretranslate"
+  ],
+  "homepage": "https://github.com/ApiO/libretranslatesource#readme",
+  "bugs": {
+    "url": "https://github.com/ApiO/libretranslatesource/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ApiO/libretranslatesource.git"
+  },
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "icon":"images/logo.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "libretranslate",
+        "title": "LibreTranslate service"
+      }
+    ],
+    "translates": [
+      {
+        "translate": "libretranslate",
+        "title": "LibreTranslate translate"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.8",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.93.0",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "axios": "0.21.4",
+    "comment-translate-manager": "^0.0.2"
+  }
+}
