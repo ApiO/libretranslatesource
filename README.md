@@ -24,13 +24,13 @@ First ensure [python](https://www.python.org/) and [pip](https://pip.pypa.io/en/
 python --version
 python -m pip --version
 ```
-> Have been tested with Python v3.11.0 & pip v24.0
+> Tested with Python 3.11.0 & pip 24.0
 
 Install [LibreTranslate](https://github.com/LibreTranslate/LibreTranslate):
 ```
 python -m pip install libretranslate
 ```
-> __Info:__ The languages installation can take few minutes
+> The languages installation can take few minutes
 
 2. Run LibreTranslate
 ```

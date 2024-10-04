@@ -2,7 +2,7 @@
   "name": "libretranslatesource",
   "displayName": "LibreTranslate source",
   "description": "Translation source for `Comment Translate` plugin using local LibreTranslate engine",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "Yolomancing",
   "engines": {
     "vscode": "^1.93.0"

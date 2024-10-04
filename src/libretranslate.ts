@@ -29,7 +29,7 @@ interface TranslateResponse {
         confidence: number;
         language: string;
     },
-    translatedText: string;
+    translatedText: string | string[];
 }
 
 export class LibreTranslate implements ITranslate {
@@ -39,7 +39,7 @@ export class LibreTranslate implements ITranslate {
    }
 
    async translate(content: string, { to = 'auto' }: ITranslateOptions){
-        const data:TranslateRequest = {
+        const data:TranslateRequest ={
             q: content.split('\n'),
             source: "auto",
             target: convertLang(to),
@@ -52,11 +52,12 @@ export class LibreTranslate implements ITranslate {
             }
         });
 
-        return res.data.translatedText;
+        return Array.isArray(res.data.translatedText) 
+            ? res.data.translatedText.join('\nsfsfsffsfs\n')
+            : res.data.translatedText;
    }
 
-   link(content: string, { to = 'auto' }: ITranslateOptions) {
-        let str = `${url}#auto/${convertLang(to)}/${encodeURIComponent(content)}`;
-        return `[LibreTranslate](${str})`;
+   link(_: string, __: ITranslateOptions) {
+        return `[LibreTranslate](${url})`;
    }
 }
